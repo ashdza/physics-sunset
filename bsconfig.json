@@ -1,0 +1,24 @@
+{
+  "name": "ashley",
+  "bs-dependencies": [
+    "bucklescript-tea",
+    "interactive-pictures"
+  ],
+  "bs-dev-dependencies": [
+    "bs-jest"
+  ],
+  "package-specs": [
+    "es6-global"
+  ],
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": [
+        {
+          "dir": "examples"
+        }
+      ]
+    },
+    "__tests__"
+  ]
+}

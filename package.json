@@ -1,0 +1,32 @@
+{
+  "name": "ashley",
+  "private": false,
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "bsb -w & lite-server",
+    "rebuild:bsb": "bsb -clean-world && bsb -make-world",
+    "rebuild:all": "rm -rf node_modules && npm link bs-platform && yarn && npm run rebuild:bsb",
+    "test": "npm run build && jest",
+    "build": "bsb -make-world"
+  },
+  "keywords": [
+    "reason",
+    "bucklescript-tea",
+    "immutable-re"
+  ],
+  "author": "Ashley D'Souza",
+  "license": "MIT",
+  "dependencies": {
+    "bucklescript-tea": "^0.6.0",
+    "immutable-re": "0.0.15",
+    "interactive-pictures": "0.0.15"
+  },
+  "devDependencies": {
+    "bs-jest": "^0.1.0",
+    "lite-server": "^2.3.0",
+    "bs-platform": "^1.7.5"
+  },
+  "peer-dependencies": {}
+}
