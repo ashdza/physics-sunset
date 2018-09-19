@@ -1,20 +1,16 @@
 {
-  "name": "ashley",
+  "name": "physics-sunset",
   "private": false,
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "dev": "bsb -w & lite-server",
-    "rebuild:bsb": "bsb -clean-world && bsb -make-world",
-    "rebuild:all": "rm -rf node_modules && npm link bs-platform && yarn && npm run rebuild:bsb",
-    "test": "npm run build && jest",
-    "build": "bsb -make-world"
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "webpack": "webpack -w",
+    "webpack:production": "NODE_ENV=production webpack"
   },
   "keywords": [
-    "reason",
-    "bucklescript-tea",
-    "immutable-re"
+    "reasonML"
   ],
   "author": "Ashley D'Souza",
   "license": "MIT",
@@ -24,9 +20,9 @@
     "interactive-pictures": "0.0.15"
   },
   "devDependencies": {
-    "bs-jest": "^0.1.0",
-    "lite-server": "^2.3.0",
-    "bs-platform": "^1.7.5"
+    "bs-platform": "^1.7.5",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10"
   },
   "peer-dependencies": {}
 }

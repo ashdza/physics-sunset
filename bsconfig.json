@@ -1,24 +1,19 @@
 {
-  "name": "ashley",
+  "name": "physics-sunset",
+  "version": "0.0.1",
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
   "bs-dependencies": [
     "bucklescript-tea",
     "interactive-pictures"
   ],
-  "bs-dev-dependencies": [
-    "bs-jest"
-  ],
-  "package-specs": [
-    "es6-global"
-  ],
-  "sources": [
-    {
-      "dir": "src",
-      "subdirs": [
-        {
-          "dir": "examples"
-        }
-      ]
-    },
-    "__tests__"
-  ]
+  "namespace": true,
+  "refmt": 3
 }
