@@ -4,8 +4,6 @@ node_modules
 # build
 lib
 .merlin
-lib
-.merlin
 
 # logs
 *.log
@@ -14,6 +12,5 @@ lib
 .DS_Store
 
 circle.yml
-now.json
 
 scripts/

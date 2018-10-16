@@ -1,0 +1,13 @@
+{
+    "name": "physics-sunset",
+    "type": "static",
+    "alias": "physics.7insights.com",
+    "static": {
+        "rewrites": [
+            {
+                "source": "**",
+                "destination": "public/index.html"
+            }
+        ]
+    }
+}
