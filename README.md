@@ -12,13 +12,13 @@ Here's an animated gif showing an old version of the app.
 
 ## App Structure
 
-The app is built in `ReasonML`, using `Bucklescript-TEA` which support The Elm Architecture. At its core it boils down to just 4 things.
+The app is built in `ReasonML`, using `Bucklescript-TEA` which support The Elm Architecture. The code is in a single file `sunset.re`. At its core it boils down to just 4 things.
 
 #### Model = State of the App
 
 ```
 type model = {
-  record fields for all instantaneous state
+  record with fields for all changeable app state
 };
 ```
 
@@ -31,7 +31,7 @@ type msg =
   | each possible incoming message
 ```
 
-#### Update = transformations from current state to next state
+#### Update = state transition function from current state to next state
 
 ```
 let update (model: model) (msg: msg) => {
@@ -44,9 +44,14 @@ let update (model: model) (msg: msg) => {
 ```
 let view (m: model) => {
   build html structure from model
+  include html bits that will generate msgs (when triggered by user)
 };
 ```
 
 Why the interactivity? Well, just because ... it was fun, and I got to learn ReasonML.
 
-To run: clone this repository, run `npm install`, then `npm run dev`.
+What is the file `physics02.re`? Not related in any way to the project, just a separate side experiment. The file has explanatory comments.
+
+## To Run
+
+Clone this repository, run `npm install`, then `npm run dev`.
