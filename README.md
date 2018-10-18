@@ -12,7 +12,7 @@ Here's an animated gif showing an old version of the app.
 
 ## App Structure
 
-The app is built in `ReasonML`, using `Bucklescript-TEA` which support The Elm Architecture. The code is in a single file `sunset.re`. At its core it boils down to just 4 things.
+The app is built in `ReasonML`, using `Bucklescript-TEA` which support The Elm Architecture. The code is in a single file `src/sunset.re`. At its core it boils down to just 4 things.
 
 #### Model = State of the App
 
@@ -22,7 +22,7 @@ type model = {
 };
 ```
 
-#### Message = Set of Messages the App will handle
+#### Message = Set of Messages from the UI that the App will handle
 
 ```
 type msg =
@@ -34,24 +34,26 @@ type msg =
 #### Update = state transition function from current state to next state
 
 ```
-let update (model: model) (msg: msg) => {
+let update (model: model) (msg: msg) : model => {
     for each model, msg combination, compute next model
 };
 ```
 
-#### View = function from current state to Html
+#### View = function from current state to Html (Vdom.t) parameterized by msg
 
 ```
-let view (m: model) => {
+let view (m: model) : Vdom.t msg => {
   build html structure from model
-  include html bits that will generate msgs (when triggered by user)
+  embed callbacks to generate msgs when triggered by the user
 };
 ```
 
+## Misc
+
 Why the interactivity? Well, just because ... it was fun, and I got to learn ReasonML.
 
-What is the file `physics02.re`? Not related in any way to the project, just a separate side experiment. The file has explanatory comments.
+What is the file `physics02.re`? It is not related in any way to the project, just a separate side experiment. The file has explanatory comments.
 
 ## To Run
 
-Clone this repository, run `npm install`, then `npm run dev`.
+Clone this repository, `npm install`, then run `npm run start` and in another shell `npm run webpack`.

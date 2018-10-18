@@ -19,7 +19,7 @@ type msg =
   | SetSunDistance int
 [@@bs.deriving {accessors: accessors}];
 
-let update (model: model) (msg: msg) => {
+let update (model: model) (msg: msg) : model => {
   Js.log {j| Model: $model   Message: $msg |j};
   switch msg {
   | IncRadius => {...model, planetRadius: model.planetRadius +. 20.}
@@ -46,7 +46,7 @@ let personPos ::t ::rot ::rad ::height ::center => {
   (footPos, headPos)
 };
 
-let view (m: model) => {
+let view (m: model) : Vdom.t msg => {
   let title = H.h1 [H.class' "box title"] [H.text "Interactive Sunset"];
   let text = H.div [H.class' "box"] [H.text "The green circle is earth viewed from a pole, the black stick figure is a person at the equator, and the pink dot is the sun.  
   The person would see the sun setting at different times if lying down vs. standing up. 
