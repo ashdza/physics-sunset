@@ -171,7 +171,7 @@ function view(m) {
           /* [] */0
         ]
       ], /* :: */[
-        Tea_html.text("Increase radius"),
+        Tea_html.text("Radius + 20"),
         /* [] */0
       ]);
   var btnDec = Tea_html.button(/* None */0, /* None */0, /* :: */[
@@ -181,7 +181,7 @@ function view(m) {
           /* [] */0
         ]
       ], /* :: */[
-        Tea_html.text("Decrease radius"),
+        Tea_html.text("Radius - 20"),
         /* [] */0
       ]);
   var radSlider = Interaction.slider("Earth Radius", 50, 200, m[/* planetRadius */1] | 0, setRadius);
@@ -217,7 +217,7 @@ function view(m) {
                         /* [] */0
                       ], /* :: */[
                         Tea_html.div(/* None */0, /* None */0, /* [] */0, /* :: */[
-                              Tea_html.text(" Current Time from MidDay (seconds in 24 hour day): " + (String(currentTime) + "")),
+                              Tea_html.text(" Current Time (secs from MidDay): " + (String(currentTime) + "")),
                               /* [] */0
                             ]),
                         /* :: */[

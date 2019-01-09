@@ -69,8 +69,8 @@ let view (m: model) : Vdom.t msg => {
   let personLine = Picture.Line personFoot personHead 4 Picture.Black;
   let topRay = Picture.Line personHead sunCenter 2 Picture.Red;
   let bottomRay = Picture.Line personFoot sunCenter 2 Picture.Orange;
-  let btnInc = H.button [H.onClick incRadius, H.class' "button"] [H.text "Increase radius"];
-  let btnDec = H.button [H.onClick decRadius, H.class' "button"] [H.text "Decrease radius"];
+  let btnInc = H.button [H.onClick incRadius, H.class' "button"] [H.text "Radius + 20"];
+  let btnDec = H.button [H.onClick decRadius, H.class' "button"] [H.text "Radius - 20"];
   let radSlider =
     Interaction.slider
       label'::"Earth Radius" min::50 max::200 init::(int_of_float m.planetRadius) action::setRadius;
@@ -93,7 +93,7 @@ let view (m: model) : Vdom.t msg => {
     [ title
     , text
     , H.div [H.class' "box"]
-        [ H.div [] [H.text {j| Current Time from MidDay (seconds in 24 hour day): $currentTime|j}]
+        [ H.div [] [H.text {j| Current Time (secs from MidDay): $currentTime|j}]
         , H.div [] [btnInc, btnDec]
         , radSlider
         , timeSlider
